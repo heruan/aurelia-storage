@@ -1,9 +1,0 @@
-{
-  "name": "aurelia-storage",
-  "homepage": "https://github.com/heruan/aurelia-storage",
-  "version": "0.1.0",
-  "main": "dist/es2015/index.d.ts",
-  "dependencies": {
-    "aurelia-json": "github:heruan/aurelia-json#06eef4f"
-  }
-}
