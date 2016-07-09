@@ -15,11 +15,16 @@ var BrowserStorage = (function () {
         this.jsonDecoder = jsonDecoder;
     }
     BrowserStorage.prototype.get = function (key) {
-        var data = this.getStorage().getItem(key);
-        if (data == null) {
-            return Promise.reject(key);
-        }
-        return Promise.resolve(this.jsonDecoder.decode(data)["item"]);
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var data = _this.getStorage().getItem(key);
+            if (data === null) {
+                reject(key);
+            }
+            else {
+                resolve(_this.jsonDecoder.decode(data)["item"]);
+            }
+        });
     };
     BrowserStorage.prototype.set = function (key, item) {
         this.getStorage().setItem(key, new aurelia_json_1.JsonEncoder().encode({
@@ -41,4 +46,3 @@ var BrowserStorage = (function () {
     return BrowserStorage;
 }());
 exports.BrowserStorage = BrowserStorage;
-//# sourceMappingURL=browser-storage.js.map

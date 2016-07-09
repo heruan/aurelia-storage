@@ -10,24 +10,27 @@ export abstract class BrowserStorage implements StorageEngine {
     public constructor(jsonDecoder: JsonDecoder) {
         this.jsonDecoder = jsonDecoder;
     }
-    
-    public get(key: string): Promise<any> {
-        let data = this.getStorage().getItem(key);
-        if (data == null) {
-            return Promise.reject(key);
-        }
-        return Promise.resolve(this.jsonDecoder.decode(data)["item"]);
+
+    public get<T>(key: string): Promise<T> {
+        return new Promise<T>((resolve, reject) => {
+            let data = this.getStorage().getItem(key);
+            if (data === null) {
+                reject(key);
+            } else {
+                resolve(this.jsonDecoder.decode(data)["item"]);
+            }
+        });
     }
 
-    public set(key: string, item: any): Promise<StorageEngine> {
+    public set<T>(key: string, item: T): Promise<StorageEngine> {
         this.getStorage().setItem(key, new JsonEncoder().encode({
             "item": item
         }));
         return Promise.resolve(this);
     }
 
-    public remove(key: string): Promise<any> {
-        return this.get(key).then(item => {
+    public remove<T>(key: string): Promise<T> {
+        return this.get<T>(key).then(item => {
             this.getStorage().removeItem(key);
             return item;
         });

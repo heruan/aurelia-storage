@@ -3,8 +3,8 @@ import { StorageEngine } from "./storage-engine";
 export declare abstract class BrowserStorage implements StorageEngine {
     private jsonDecoder;
     constructor(jsonDecoder: JsonDecoder);
-    get(key: string): Promise<any>;
-    set(key: string, item: any): Promise<StorageEngine>;
-    remove(key: string): Promise<any>;
+    get<T>(key: string): Promise<T>;
+    set<T>(key: string, item: T): Promise<StorageEngine>;
+    remove<T>(key: string): Promise<T>;
     protected abstract getStorage(): Storage;
 }

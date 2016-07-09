@@ -1,4 +1,3 @@
-
 export interface StorageEngine {
 
     /**
@@ -7,7 +6,7 @@ export interface StorageEngine {
     * @param key The key used to store the item.
     * @returns   A Promise which resolves to the item, or rejects the key if the item doesn"t exists.
     */
-    get(key: string): Promise<any>;
+    get<T>(key: string): Promise<T>;
 
     /**
     * Stores an item to the given key.
@@ -16,7 +15,7 @@ export interface StorageEngine {
     * @param item The item to store.
     * @returns    A Promise which resolves to this Storage on success, or rejects the key on failure.
     */
-    set(key: string, item: any): Promise<StorageEngine>;
+    set<T>(key: string, item: T): Promise<StorageEngine>;
 
     /**
     * Removes the item at the given key.
@@ -24,6 +23,6 @@ export interface StorageEngine {
     * @param key The key used to store the item.
     * @returns   A Promise which resolves to the removed item, or rejects the key if the item doesn"t exists.
     */
-    remove(key: string): Promise<any>;
+    remove<T>(key: string): Promise<T>;
 
 }

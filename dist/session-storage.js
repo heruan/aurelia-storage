@@ -16,4 +16,3 @@ var SessionStorage = (function (_super) {
     return SessionStorage;
 }(browser_storage_1.BrowserStorage));
 exports.SessionStorage = SessionStorage;
-//# sourceMappingURL=session-storage.js.map
