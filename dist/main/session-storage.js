@@ -8,7 +8,7 @@ var browser_storage_1 = require("./browser-storage");
 var SessionStorage = (function (_super) {
     __extends(SessionStorage, _super);
     function SessionStorage() {
-        _super.apply(this, arguments);
+        return _super.apply(this, arguments) || this;
     }
     SessionStorage.prototype.getStorage = function () {
         return sessionStorage;

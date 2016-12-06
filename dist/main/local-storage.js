@@ -8,7 +8,7 @@ var browser_storage_1 = require("./browser-storage");
 var LocalStorage = (function (_super) {
     __extends(LocalStorage, _super);
     function LocalStorage() {
-        _super.apply(this, arguments);
+        return _super.apply(this, arguments) || this;
     }
     LocalStorage.prototype.getStorage = function () {
         return localStorage;
