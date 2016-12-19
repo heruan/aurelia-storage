@@ -58,3 +58,5 @@ BrowserStorage = __decorate([
     __metadata("design:paramtypes", [type_binder_1.TypeBinder, aurelia_json_1.JsonDecoder, aurelia_json_1.JsonEncoder])
 ], BrowserStorage);
 exports.BrowserStorage = BrowserStorage;
+
+//# sourceMappingURL=browser-storage.js.map

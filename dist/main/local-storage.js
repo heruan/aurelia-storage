@@ -16,3 +16,5 @@ var LocalStorage = (function (_super) {
     return LocalStorage;
 }(browser_storage_1.BrowserStorage));
 exports.LocalStorage = LocalStorage;
+
+//# sourceMappingURL=local-storage.js.map

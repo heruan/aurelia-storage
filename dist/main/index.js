@@ -9,3 +9,5 @@ function configure(frameworkConfiguration, pluginConfiguration) {
     container.registerSingleton(session_storage_1.SessionStorage);
 }
 exports.configure = configure;
+
+//# sourceMappingURL=index.js.map
