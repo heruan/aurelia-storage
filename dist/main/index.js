@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var local_storage_1 = require("./local-storage");
 exports.LocalStorage = local_storage_1.LocalStorage;
 var session_storage_1 = require("./session-storage");
